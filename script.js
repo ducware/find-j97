@@ -37,7 +37,8 @@
     function updateVolume(mouseX, mouseY) {
         const dist = distance(mouseX, mouseY, targetX + 40, targetY + 40);
         const maxDist = Math.sqrt(window.innerWidth**2 + window.innerHeight**2);
-        let vol = 1 - (dist / maxDist);
+        let ratio = dist / maxDist; 
+        let vol = Math.pow(1 - ratio, 3); // dùng lũy thừa 3 để âm lượng tăng chậm khi xa
         vol = Math.max(0, Math.min(1, vol));
         proximitySound.volume = vol;
     }
