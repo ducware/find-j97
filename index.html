@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Find J97</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="game-area">
+        <div id="instructions">
+            <h1>Find J97</h1>
+            <p>Di chuyển chuột xung quanh. Âm thanh sẽ lớn hơn khi bạn đến gần. Click vào vị trí mà bạn nghĩ J97 đang trốn ở đó!</p>
+            <button id="reset-btn">Chơi Lại</button>
+        </div>
+        <div id="target"></div>
+    </div>
+    <audio id="proximity-sound" loop src="sounds/beep.mp3"></audio>
+    <audio id="success-sound" src="sounds/success.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

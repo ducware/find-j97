@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #eee;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#game-area {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    cursor: crosshair;
+    background: #fff;
+    user-select: none;
+    overflow: hidden;
+}
+
+#instructions {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.1);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+#instructions h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+#instructions p {
+    margin: 5px 0;
+}
+
+/* Đảm bảo file images/scret.png tồn tại và đúng tên */
+#target {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: url('/images/secret.png') no-repeat center center;
+    background-size: cover;
+    display: none; /* Ẩn ban đầu */
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
