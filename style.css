@@ -36,14 +36,14 @@ body {
     margin: 5px 0;
 }
 
-/* Đảm bảo file images/scret.png tồn tại và đúng tên */
+/* Make sure the file images/scret.png exists and has the correct name */
 #target {
     position: absolute;
     width: 80px;
     height: 80px;
     background: url('/images/secret.png') no-repeat center center;
     background-size: cover;
-    display: none; /* Ẩn ban đầu */
+    display: none; /* Initially hidden */
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
