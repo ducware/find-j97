@@ -13,11 +13,11 @@
 
     // List proximity sound
     const soundFiles = [
-        './sounds/sound1.mp3',
-        './sounds/sound2.mp3',
-        './sounds/sound4.mp3',
-        './sounds/sound5.mp3',
-        './sounds/sound6.mp3',
+        'sounds/sound1.mp3',
+        'sounds/sound2.mp3',
+        'sounds/sound4.mp3',
+        'sounds/sound5.mp3',
+        'sounds/sound6.mp3',
     ];
 
     // Function to generate random audio from a list
@@ -74,15 +74,27 @@
 
     document.addEventListener('click', (e) => {
         if (targetFound) return;
+    
         const dist = distance(e.clientX, e.clientY, targetX + 40, targetY + 40);
         if (dist < clickThreshold) {
             targetFound = true;
+    
             targetEl.style.display = 'block';
+            targetEl.style.setProperty('--target-x', `${targetX + 40}px`);
+            targetEl.style.setProperty('--target-y', `${targetY + 40}px`);
+            targetEl.classList.add('zoom-animation');
+    
             proximitySound.pause();
             proximitySound.currentTime = 0;
+    
             successSound.play();
+    
+            targetEl.addEventListener('animationend', () => {
+                document.getElementById('message').style.display = 'block';
+            }, { once: true });
         }
     });
+    
 
     resetBtn.addEventListener('click', () => {
         initGame();
